@@ -1,0 +1,41 @@
+{% extends 'flatpages/default.html' %}
+
+<!-- Название-->
+{% block title %}
+Posts
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим новость, ID которой было передано в адрес -->
+{% block content %}
+<hr>
+    <table>
+        <tr>
+            <td>
+                Заголовок
+            </td>
+            <td>
+                Дата публикации
+            </td>
+            <td>
+                Автор публикации
+            </td>
+            <td>
+                Содержание
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{post.title}}
+            </td>
+            <td>
+                {{post.dateCreation|date:'d M y H:i' }}
+            </td>
+            <td>
+                {{post.author.authorUser}}
+            </td>
+            <td>
+                {{post.text}}
+            </td>
+        </tr>
+    </table>
+{% endblock content %}
