@@ -1,5 +1,7 @@
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}
+
 <!-- Название-->
 {% block title %}
 Posts
@@ -34,7 +36,7 @@ Posts
                 {{post.author.authorUser}}
             </td>
             <td>
-                {{post.text}}
+                {{post.text|censor}}
             </td>
         </tr>
     </table>
